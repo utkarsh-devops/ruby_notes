@@ -66,6 +66,11 @@ These are all equivalent:
 * has_key?, has_value?
 * merge, merge!
 * delete, delete_if
+  
+  `delete` is good when we are passing huge number of hashes around the class or objects. Good part is that when we do
+  `my_hash.delete(:foo)` Deletes the key-value pair and returns the value from hsh whose key is equal to key. If the key is not found, returns the default value. This keeps hashes clean once used so they are delete for good after use. Just use and thow
+* assert_key_values
+  `assert_key_values` gives you the ability to verify that each of the keys in the Hash are expected. For example, if you take an options Hash as an argument to a method you may want to validate that only expected options are passed as part of the hash; assert_valid_keys gives you the ability to list the keys you expect.
 
 # Hash arguments
 
